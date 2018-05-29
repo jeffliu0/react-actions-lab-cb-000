@@ -53,13 +53,16 @@ function removeRow (ev) {
 
 function removeColumn (ev) {
   ev.preventDefault()
+  if(this.state.table[0].length){
     const updatedTable = this.state.table.map(
       row => row.slice(0,-1)
       )
 
+
     this.setState({
       table: updatedTable
     })
+  }
 }
 
 
